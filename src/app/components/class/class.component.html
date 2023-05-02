@@ -1,0 +1,21 @@
+<h3>Liste des classses</h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Classe</th>
+        <th scope="col">Effectif</th>
+        <th scope="col" >Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let class of classes">
+        <th scope="row">{{class.id}}</th>
+        <td>{{ class.nomClass}}</td>
+        <td>{{ class.effectif}}</td>
+        <td><i routerLink="/class/{{class.id}}" style="font-size: x-large; color:teal" class="bi bi-eye"></i> Details</td>
+       
+      </tr>
+     
+    </tbody>
+  </table>

@@ -1,0 +1,26 @@
+<h3>Formulaire d'ajout d'etudiant</h3>
+<form  [formGroup]="studentForm" (ngSubmit)="saveStudent()">
+    <div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Succès!</strong> Vous avez inscrit un etudiant.
+        <button (click)="closeMessage()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <div class="mb-3">
+        <label for="matricule" class="form-label">Matricule</label>
+        <input required="required" readonly type="text" class="form-control" id="matricule" aria-describedby="matricule" formControlName="matricule">
+    </div>
+    <div class="mb-3">
+        <label for="nom" class="form-label">Nom</label>
+        <input required="requred" type="text" class="form-control" id="nom" aria-describedby="nom" formControlName="nom">
+    </div>
+    <div class="mb-3">
+        <label for="prenom" class="form-label">Prenom</label>
+        <input required type="text" class="form-control" id="prenom" aria-describedby="prenom" formControlName="prenom">
+    </div>
+    <div class="mb-3">
+        <select required="required" class="form-select" aria-label="Default select example" formControlName="classId">
+            <option *ngFor="let class of classes" value="{{class.id}}">{{class.nomClass}}</option>
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

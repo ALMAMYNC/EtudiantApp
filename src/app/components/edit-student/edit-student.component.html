@@ -1,0 +1,21 @@
+<h3>Modification d'etudiant</h3>
+<form  [formGroup]="studentUpdateForm" (ngSubmit)="updateStudent()">
+    <div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Succès!</strong> Vous avez inscrit un etudiant.
+        <button (click)="closeMessage()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <div class="mb-3">
+        <label for="matricule" class="form-label">Matricule</label>
+        <input readonly type="text" class="form-control" id="matricule" aria-describedby="matricule" formControlName="matricule">
+    </div>
+    <div class="mb-3">
+        <label for="nom" class="form-label">Nom</label>
+        <input type="text" class="form-control" id="nom" aria-describedby="nom" formControlName="nom">
+    </div>
+    <div class="mb-3">
+        <label for="prenom" class="form-label">Prenom</label>
+        <input type="text" class="form-control" id="prenom" aria-describedby="prenom" formControlName="prenom">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

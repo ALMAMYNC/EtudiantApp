@@ -1,0 +1,10 @@
+i{
+    font-size: x-large;
+    margin: 10px;
+}
+td i .edit{
+    color: teal;
+}
+td i .delete{
+    color: red;
+}

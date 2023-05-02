@@ -1,0 +1,23 @@
+<h3>Liste des etudiants</h3>
+<table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Matricule</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let student of students">
+        <th scope="row">{{student.id}}</th>
+        <td>{{ student.matricule}}</td>
+        <td>{{ student.nom}}</td>
+        <td>{{ student.prenom}}</td>
+        <td><i (click)="deleteStudent(student.id, student.classId)" style="color: red;" class="bi bi-person-fill-dash"></i><i style="color:teal" routerLink="/edit/{{student.id}}" class="edit bi bi-pencil-square"></i></td>
+        
+      </tr>
+     
+    </tbody>
+  </table>

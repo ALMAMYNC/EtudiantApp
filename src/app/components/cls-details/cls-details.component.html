@@ -1,0 +1,24 @@
+<h3>Liste des etudiants  avec un effectif</h3>
+<h5>Classe : {{ classStd.nomClass }}</h5>
+<h5>Effectif : {{ classStd.effectif }} etudiant</h5>
+<table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Matricule</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let student of students">
+        <th scope="row">{{student.id}}</th>
+        <td>{{ student.matricule}}</td>
+        <td>{{ student.nom}}</td>
+        <td>{{ student.prenom}}</td>
+        
+      </tr>
+     
+    </tbody>
+  </table>
+
